@@ -29,7 +29,6 @@ export default new Vuex.Store({
         const regex = /^(http|https)/;
         if (value.length > 8 && value.match(regex)) return true;
         else return 'Invalid url';
-        // return (value.length > 8 && value.match(regex)) || 'Invalid url.'
       },
     },
     themeColor: {
