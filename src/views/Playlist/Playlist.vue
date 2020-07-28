@@ -141,7 +141,7 @@
         </v-card>
       </v-flex>
     </v-layout>
-    <create-edit v-if="editedPlaylist !== undefined && editedPlaylist.length > 0"
+    <create-edit v-if="editedPlaylist !== undefined"
                  ref="dialog"
                  :edited-playlist="editedPlaylist"/>
     <confirm ref="confirm"></confirm>
@@ -274,6 +274,7 @@
           song_list: [],
           thumb_up_count: 0
         })
+        console.log(this.editedPlaylist)
         this.$refs.dialog.open("Add playlist")
           .then(res => {
             if (res) this.add()
