@@ -37,12 +37,6 @@ new Vue({
   store,
   vuetify,
   async beforeCreate() {
-    // if (this.$router.currentRoute.path !== '/') {
-    //   console.log(this.$router.currentRoute)
-    //   await this.$router.push({name: 'Home'})
-    // }
-    console.log(this.$router.currentRoute)
-    await this.$router.push({name: 'Home'})
     await this.$store.dispatch('notice/getNotice')
     if (localStorage.getItem("Authorization"))
       await this.$store.dispatch('user/getMemberInfo')
